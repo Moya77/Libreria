@@ -63,9 +63,9 @@ namespace Books {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Byte[].
         /// </summary>
-        public static byte[] ReporteRetiros {
+        public static byte[] ReportLibro {
             get {
-                object obj = ResourceManager.GetObject("ReporteRetiros", resourceCulture);
+                object obj = ResourceManager.GetObject("ReportLibro", resourceCulture);
                 return ((byte[])(obj));
             }
         }

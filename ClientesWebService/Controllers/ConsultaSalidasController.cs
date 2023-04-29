@@ -14,7 +14,7 @@ namespace Books.Controllers
         // GET: ConsultaSalidasController/Details
         public ActionResult ReporteSalida(string fechaInicio, string fechaFinal)
         {
-                string nombreReporte = "ReporteRetiros";
+                string nombreReporte = "ReportLibro";
                 return RedirectToAction("ReporteSalidas", "ReporteSalidas", new { reportName = nombreReporte,FechaInicio=fechaInicio,FechaFinal=fechaFinal });
         }
 

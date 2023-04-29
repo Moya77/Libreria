@@ -50,7 +50,7 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
-    <Report Include="ReporteRetiros.rdl" />
+    <Report Include="ReportLibro.rdl" />
     <Report Include="ReportLibros.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />

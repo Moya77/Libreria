@@ -22,9 +22,9 @@
 
                 <tr class="@((i % 2 == 0) ? "table-primary" : "table-secondary")">
                     <td>@Model[i].Customer_code</td>
-                    <td>@Model[i].ID_Customer</td>
                     <td>@Model[i].Full_name</td>
-                    <td>@Model[i].Born_date</td>
+                    <td>@Model[i].ID_Customer</td>
+                    <td>@Model[i].Born_date.Split(" ")[0]</td>
                 </tr>
             }
 

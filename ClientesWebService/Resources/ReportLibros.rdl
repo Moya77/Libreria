@@ -17,7 +17,7 @@
     <DataSource Name="LibreriaOrigen">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=CRSSJLIT2\SQLSERVERDEV;Initial Catalog=Libreria; user=sa; password=$herat0n!</ConnectString>
+        <ConnectString>Data Source=FAMM\SQLEXPRESSDEV;Initial Catalog=Libreria; user=sa; password=$herat0n!</ConnectString>
         <Prompt>Especifique un nombre de usuario y una contraseña para el origen de datos LibreriaOrigen</Prompt>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>

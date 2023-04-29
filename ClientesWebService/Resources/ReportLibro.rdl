@@ -3,35 +3,34 @@
   <am:AuthoringMetadata>
     <am:CreatedBy>
       <am:Name>SSDTRS</am:Name>
-      <am:Version>17.5.33530.505</am:Version>
+      <am:Version>17.5.33424.131</am:Version>
     </am:CreatedBy>
     <am:UpdatedBy>
       <am:Name>SSDTRS</am:Name>
-      <am:Version>17.5.33530.505</am:Version>
+      <am:Version>17.5.33424.131</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2023-04-28T23:07:43.9338044Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2023-04-29T04:51:53.8168051Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="LibrosRetirados">
+    <DataSource Name="DataSource1">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=CRSSJLIT2\SQLSERVERDEV;Initial Catalog=Libreria;user=sa; password=$herat0n!</ConnectString>
+        <ConnectString>Data Source=FAMM\SQLEXPRESSDEV;Initial Catalog=Libreria;user=sa;password=$herat0n!</ConnectString>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
-      <rd:DataSourceID>e2eedc52-b78a-4ef4-81fc-f5ce8fdb5f99</rd:DataSourceID>
+      <rd:DataSourceID>dac873dc-44aa-4b7e-9f94-3102fa8d3a44</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>LibrosRetirados</DataSourceName>
+        <DataSourceName>DataSource1</DataSourceName>
         <CommandText>SELECT        LibrosRetirados.Nombre, Clientes.NombreCompleto, LibrosRetirados.FechaRetiro, LibrosRetirados.RetiroID
 FROM            LibrosRetirados INNER JOIN
-                         Clientes ON Clientes.ClienteID = LibrosRetirados.ClienteID
-                         
-                         </CommandText>
+                         Clientes ON Clientes.ClienteID = LibrosRetirados.ClienteID</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
         <Field Name="Nombre">
@@ -64,7 +63,7 @@ FROM            LibrosRetirados INNER JOIN
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>ReporteRetiros</Value>
+                    <Value>Reporte de Libros en stock</Value>
                     <Style>
                       <FontFamily>Segoe UI Light</FontFamily>
                       <FontSize>24pt</FontSize>
@@ -77,7 +76,7 @@ FROM            LibrosRetirados INNER JOIN
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
             <Height>0.43in</Height>
-            <Width>7.27083in</Width>
+            <Width>7.07292in</Width>
             <Style>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -89,16 +88,16 @@ FROM            LibrosRetirados INNER JOIN
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.4375in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.77083in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.64583in</Width>
+                  <Width>1.25in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.85417in</Width>
+                  <Width>1.27083in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -114,7 +113,7 @@ FROM            LibrosRetirados INNER JOIN
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Transaccion</Value>
+                                  <Value>Nombre</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
@@ -123,10 +122,7 @@ FROM            LibrosRetirados INNER JOIN
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <FontFamily />
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox2</rd:DefaultName>
@@ -155,7 +151,7 @@ FROM            LibrosRetirados INNER JOIN
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Libro</Value>
+                                  <Value>Cliente</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
@@ -164,9 +160,7 @@ FROM            LibrosRetirados INNER JOIN
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox4</rd:DefaultName>
@@ -195,7 +189,7 @@ FROM            LibrosRetirados INNER JOIN
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Cliente</Value>
+                                  <Value>Fecha Retiro</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
@@ -204,9 +198,7 @@ FROM            LibrosRetirados INNER JOIN
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox5</rd:DefaultName>
@@ -235,7 +227,7 @@ FROM            LibrosRetirados INNER JOIN
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Fecha Retiro</Value>
+                                  <Value>Transaccion</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
@@ -245,7 +237,8 @@ FROM            LibrosRetirados INNER JOIN
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <FontFamily />
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -273,46 +266,7 @@ FROM            LibrosRetirados INNER JOIN
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="RetiroID">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!RetiroID.Value</Value>
-                                  <Style>
-                                    <FontFamily />
-                                    <Color>#333333</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily />
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>RetiroID</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Nombre1">
+                        <Textbox Name="Nombre">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -328,11 +282,11 @@ FROM            LibrosRetirados INNER JOIN
                               </TextRuns>
                               <Style>
                                 <FontFamily />
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Nombre1</rd:DefaultName>
+                          <rd:DefaultName>Nombre</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -367,7 +321,7 @@ FROM            LibrosRetirados INNER JOIN
                               </TextRuns>
                               <Style>
                                 <FontFamily />
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -406,11 +360,50 @@ FROM            LibrosRetirados INNER JOIN
                               </TextRuns>
                               <Style>
                                 <FontFamily />
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>FechaRetiro1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="RetiroID1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!RetiroID.Value)</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily />
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>RetiroID1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -456,42 +449,6 @@ FROM            LibrosRetirados INNER JOIN
                             <Border>
                               <Color>LightGrey</Color>
                             </Border>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Nombre">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily />
-                                    <Color>#333333</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Nombre</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -573,6 +530,42 @@ FROM            LibrosRetirados INNER JOIN
                         </Textbox>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="RetiroID">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>RetiroID</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
               </TablixRows>
@@ -593,14 +586,14 @@ FROM            LibrosRetirados INNER JOIN
                   <KeepTogether>true</KeepTogether>
                 </TablixMember>
                 <TablixMember>
-                  <Group Name="table1_RetiroID">
+                  <Group Name="table1_Nombre">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!RetiroID.Value</GroupExpression>
+                      <GroupExpression>=Fields!Nombre.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!RetiroID.Value</Value>
+                      <Value>=Fields!Nombre.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>
@@ -626,7 +619,7 @@ FROM            LibrosRetirados INNER JOIN
             <DataSetName>DataSet1</DataSetName>
             <Top>0.43in</Top>
             <Height>0.64in</Height>
-            <Width>5.5in</Width>
+            <Width>5.72917in</Width>
             <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
@@ -634,7 +627,7 @@ FROM            LibrosRetirados INNER JOIN
         <Height>1.07in</Height>
         <Style />
       </Body>
-      <Width>7.27083in</Width>
+      <Width>7.07292in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
@@ -653,5 +646,5 @@ FROM            LibrosRetirados INNER JOIN
   <Language>es-ES</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>d8442c38-e2e5-4a21-a259-86325d999b20</rd:ReportID>
+  <rd:ReportID>76e5ffe6-039d-4ecc-9b02-8a8f4fc87f48</rd:ReportID>
 </Report>

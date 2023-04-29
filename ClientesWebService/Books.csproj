@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\ReporteRetiros.rdl" />
+    <None Remove="Resources\ReportLibro.rdl" />
     <None Remove="Resources\ReportLibros.rdl" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\ReporteRetiros.rdl" />
+    <EmbeddedResource Include="Resources\ReportLibro.rdl" />
     <EmbeddedResource Include="Resources\ReportLibros.rdl" />
   </ItemGroup>
 
