@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model List<Customer>;
+
+    <h1>Lista de clientes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Codigo de cliente</th>
+                <th scope="col">Nombre completo</th>
+                <th scope="col">Identificacion</th>
+                <th scope="col">Fecha de nacimiento</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @for (var i = 0; i < Model.Count; i++)
+            {
+
+                <tr class="@((i % 2 == 0) ? "table-primary" : "table-secondary")">
+                    <td>@Model[i].Customer_code</td>
+                    <td>@Model[i].ID_Customer</td>
+                    <td>@Model[i].Full_name</td>
+                    <td>@Model[i].Born_date</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}

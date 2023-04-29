@@ -1,0 +1,81 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <script>
+        var homeUrl = '@Url.Action("Index", "Home")';
+    </script>
+
+    @using Books.Models;
+    @model IncomingBook;
+
+    @using (Html.BeginForm("IncommingBooK", "Ingreso", FormMethod.Post, new { id = "FormCustomer", onsubmit = "return confirmSubmit(event);" }))
+    {
+        <div class="mb-3">
+            <label for="BookCode" class="form-label">Código</label>
+            <input type="text" required class="form-control" onfocusout="getBookByCode()" placeholder="Código de libro" id="BookCode" name="stock.Book_code" value="@Model.stock.Book_code">
+
+        </div>
+
+        <div class="mb-3">
+            <label for="NombreLibro" class="form-label">Nombre del libro</label>
+            <input type="text" required class="form-control" readonly id="NombreLibro" name="stock.Description" value="@Model.stock.Description">
+
+        </div>
+
+        <div class="mb-3">
+            <label for="Price" class="form-label">Precio</label>
+            <input type="text" required class="form-control" id="Price" name="stock.Price" value="@Model.stock.Price">
+
+        </div>
+
+
+        <div class="mb-3">
+            <label for="ClientCode" class="form-label">Código de cliente</label>
+            <input type="text" required onfocusout="GetCustomerByCode()" class="form-control" id="ClientCode" name="stock.CustomerCode" value="@Model.stock.CustomerCode">
+
+        </div>
+
+
+        <div class="mb-3">
+            <label for="CustomerName" class="form-label">Cliente</label>
+            <input type="text" class="form-control" required readonly id="CustomerName" name="customer.Full_name" value="@Model.customer.Full_name">
+
+        </div>
+
+
+        <div class="mb-3">
+            <label for="Incom_date" class="form-label">Fecha de indreso</label>
+            <input type="date" class="form-control" id="Incom_date" name="stock.Incom_date" value="@Model.stock.Incom_date">
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    }
+
+    @if (Model.Result?.Length > 0)
+    {
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 style="color:blue" class="modal-title" id="staticBackdropLabel">Resultado de la operación</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body align-content-center text-center" >
+                    <h3 style="color:dimgray">@Model.messaje</h3>
+                    </div>
+                    <div class="modal-footer">
+                        @if (Model.Result.Equals("success"))
+                        {
+                            <button type="button" class="btn btn-primary" onclick="location.href='/Ingreso/Ingreso'">Agregar mas</button>
+                            <button type="button" class="btn btn-primary" onclick="location.href='/Home/Index'">ir al inicio</button>
+                        }else{
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">De acuerdo</button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+}

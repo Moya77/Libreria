@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model Book;
+
+    @using (Html.BeginForm("SaveBook", "Book", FormMethod.Post, new { id = "FormCustomer" }))
+    {
+        <div class="mb-3">
+            <label for="BookCode" class="form-label">Código</label>
+            <input type="text" required class="form-control" readonly placeholder="Código de libro" id="BookCode" name="Codigo" value="@Model.Codigo">
+            <small id="IDHelp" class="form-text text-muted">Se generá de forma automatica al registrar el libro</small>
+        </div>
+
+        <div class="mb-3">
+            <label for="NombreLibro" class="form-label">Nombre del libro</label>
+            <input type="text" class="form-control" onfocusout="getBook() " id="NombreLibro" name="Nombre" value="@Model.Nombre">
+
+        </div>
+  
+
+        <div class="mb-3">
+            <label for="Empresa" class="form-label">Empresa</label>
+            <input type="text" class="form-control" id="Empresa" name="Empresa" value="@Model.Empresa">
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    }
+}

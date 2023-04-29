@@ -1,0 +1,33 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.modalContainer{
+    padding:40px;
+  
+}
+
+#ListScroll{
+    overflow-y:scroll;
+    width:75%;
+    height:400px;
+}
+
+#RowClient{
+    background-color:cornflowerblue;
+}

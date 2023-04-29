@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+  
+    <h2>Listado de libros por usuarios</h2>
+
+    @using Books.Models;
+    @model Dictionary<string,ListaLibrosUsuarios>;
+
+     <div id="ListScroll">
+        <br />
+        <br />
+        @foreach(KeyValuePair<string,ListaLibrosUsuarios> ListaUsuario in Model){
+        <table id="TableBooks" class="table">
+            <thead>
+                <tr>
+                    <th id="RowClient" colspan="3" scope="col">Cliente:&nbsp;&nbsp;@ListaUsuario.Value.Customer.Full_name</th>
+                </tr>
+                <tr>
+                    <th scope="col">Fecha de ingreso</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                    @foreach ((Stock libro, int i) in ListaUsuario.Value.Books.Select((Value, Index) => (Value, Index)))
+                    {
+
+                    <tr class="@((i % 2 == 0) ? "table-primary" : "table-secondary")">
+                        <td>@libro.Incom_date.Split(" ")[0]</td>
+                        <td>@libro.Description</td>
+                        <td>@libro.Price</td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+            <br />
+            <br />
+    }
+    
+    </div>
+    }
+
+

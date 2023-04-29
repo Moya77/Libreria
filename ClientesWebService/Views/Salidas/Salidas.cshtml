@@ -1,0 +1,90 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        var homeUrl = '@Url.Action("Index", "Home")';
+    </script>
+
+    @using Books.Models;
+    @model OutBook;
+
+    @using (Html.BeginForm("RetiroDeLibros", "Salidas", FormMethod.Post, new { id = "FormCustomerBook", onsubmit = "return confirmSubmitBooks(event);" }))
+    {
+
+        <div class="mb-3">
+            <label for="ClientCode" class="form-label">Código de cliente</label>
+            <input type="text" required class="form-control" id="ClientCode" name="Id_cliente" value="@Model.Id_cliente">
+
+        </div>
+
+        <div class="mb-3">
+            <h2>Nombre del cliente:&nbsp;&nbsp;@Model.NombreCompleto</h2>
+        </div>
+
+        <div class="mb-3">
+            <label for="OutDate" class="form-label">Fecha de retiro</label>
+            @if (Model.UserBooks.Count==0)
+            {
+                <input type="date" required contenteditable="false" readonly class="form-control" id="OutDate" name="FechaSalida" value="@Model.FechaSalida">
+            }
+            else
+            {
+                <input type="date" contenteditable="false" class="form-control" id="OutDate" name="FechaSalida" value="@Model.FechaSalida">
+            }
+           
+
+        </div>
+
+        @if (Model.UserBooks.Count > 0)
+        {
+            <button type="submit" class="btn btn-primary">Confirmar retiro</button>
+        }
+        else
+        {
+            <button type="submit" class="btn btn-primary">Consultar usuario</button>
+        }
+        <br />
+        <br />
+        <table id="TableBooks" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Fecha de ingreso</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                @for (var i = 0; i < Model.UserBooks.Count; i++)
+                {
+
+                    <tr class="@((i % 2 == 0) ? "table-primary" : "table-secondary")">
+                        <td>@Model.UserBooks[i].Incom_date.Split(" ")[0]</td>
+                        <td>@Model.UserBooks[i].Description</td>
+                        <td>@Model.UserBooks[i].Price</td>
+
+                        <td>
+                            <input type="hidden" name="UserBooks[@i].Id_Stock" value="@Model.UserBooks[i].Id_Stock" />
+                            <input type="hidden" name="UserBooks[@i].Incom_date" value="@Model.UserBooks[i].Incom_date" />
+                            <input type="hidden" name="UserBooks[@i].Description" value="@Model.UserBooks[i].Description" />
+                            <input type="hidden" name="UserBooks[@i].Price" value="@Model.UserBooks[i].Price" />
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    }
+    @if (Model.Procesed)
+    {
+        <script type="text/javascript">
+            window.location.href = '@Url.Action("Index", "Home")';
+        </script>
+    }
+}

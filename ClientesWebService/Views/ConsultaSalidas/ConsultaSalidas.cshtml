@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <h3>Reporte de salidas</h3>
+
+    @using (Html.BeginForm("ReporteSalida", "ConsultaSalidas", FormMethod.Post, new { id = "FormCustomerBook" }))
+    {
+
+        <div class="mb-3">
+            <label for="ClientCode" class="form-label">Fecha inicio</label>
+            <input type="date" required class="form-control" id="FechaInicio" name="FechaInicio">
+            <label for="ClientCode" class="form-label">Fecha final</label>
+            <input type="date" required class="form-control" id="FechaFinal" name="FechaFinal">
+            <br/>
+            <input class="btn-primary" value="Realizar consulta" type="submit"/>
+            </div>
+    }
+}

@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Clientes y productos";
+}
+
+<div class="container">
+    <div class="text-center">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Customer", "Customer")">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Book", "Book")">Libros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Ingreso", "Ingreso")">Ingreso de productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Salidas", "Salidas")">Salida de productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("CustomerList", "CustomerList")">Lista de clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("librosUsuarios", "LibrosPorUsuario")">Lista de libros por clientes</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("ReporteStock", "ReportStock", new { reportName = "ReportLibros" })">Reporte de stock de libros</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("ConsultaSalidas", "ConsultaSalidas", new { reportName = "ReporteRetiros" })">Reporte de Salidas</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

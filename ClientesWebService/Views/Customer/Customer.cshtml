@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model Customer;
+
+    @using (Html.BeginForm("SaveCustomer", "Customer", FormMethod.Post, new { id = "FormCustomer" }))
+    {
+        <div class="mb-3">
+            <label for="IdCliente" class="form-label">Código</label>
+            <input type="text" required class="form-control" readonly placeholder="Código de cliente" id="IdCliente" name="ID_Cliente" value="@Model.Customer_code">
+            <small id="IDHelpCustomer" class="form-text text-muted">Se generá de forma automatica al registrar el cliente</small>
+        </div>
+
+        <div class="mb-3">
+            <label for="Identificacion" class="form-label">Identificacion</label>
+            <input type="text" required class="form-control" onfocusout="getCustomer()" id="Identificacion" placeholder="Identificacion" name="ID_Customer" value="@Model.ID_Customer">
+
+        </div>
+
+        <div class="mb-3">
+            <label for="NombreCliente" class="form-label">Nombre</label>
+            <input type="text" required class="form-control" id="NombreCliente" placeholder="Nombre del cliente" name="Full_name" value="@Model.Full_name">
+
+        </div>
+     
+
+        <div class="mb-3">
+            <label for="Empresa" class="form-label">Fecha de nacimiento</label>
+            <input type="date" required class="form-control" id="nacimiento" name="Born_date" value="@Model.Born_date">
+
+        </div>
+
+
+
+        <button type="submit" id="btnFormCustomer" class="btn btn-primary">Guardar</button>
+    }
+                
+}
