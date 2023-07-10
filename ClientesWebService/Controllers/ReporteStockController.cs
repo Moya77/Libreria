@@ -12,10 +12,7 @@ namespace Books.Controllers
             var assembly = Assembly.GetExecutingAssembly();
             var resourceName = $"Books.Resources.{reportName}.rdl";
 
-            foreach (var resource in assembly.GetManifestResourceNames())
-            {
-                Console.WriteLine(resource);
-            }
+           
 
 
             using var stream = assembly.GetManifestResourceStream(resourceName);

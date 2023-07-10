@@ -1,18 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Resources\ReportLibro.rdl" />
+    <None Remove="Resources\ReportLibro.rdl.data" />
     <None Remove="Resources\ReportLibros.rdl" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\ReportLibro.rdl" />
     <EmbeddedResource Include="Resources\ReportLibros.rdl" />
   </ItemGroup>
 

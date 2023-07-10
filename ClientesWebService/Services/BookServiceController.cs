@@ -45,9 +45,17 @@ namespace Books.Services
         [HttpPost]
         public Book SaveBook([FromBody] Book book)
         {
-            _ICommandAddBook.AddBook(book.Nombre, book.Empresa);
-            book.Codigo = _IQueryGetBookCode.GetBookCode(book.Nombre);
-            return book;
+            try
+            {
+                _ICommandAddBook.AddBook(book.Nombre, book.Empresa);
+                book.Codigo = _IQueryGetBookCode.GetBookCode(book.Nombre);
+                return book;
+            }
+            catch (Exception ex)
+            {
+
+                return new Book();
+            }
         }
 
         [HttpPost("IncommingBook")]
